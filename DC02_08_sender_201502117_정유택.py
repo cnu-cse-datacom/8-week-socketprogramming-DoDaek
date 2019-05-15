@@ -38,6 +38,7 @@ with open(file_name, 'rb') as send_file:
                 current_size = total_size
             divided_file = send_file.read(1024)
             socket.sendto(divided_file, (recv_ip, int(recv_port)))
+            sleep(0.01)
             percent = str((current_size / total_size) * 100) + '%'
             print('current_size / total_size =', current_size, '/', total_size, ',', percent)
 
